@@ -116,6 +116,9 @@ const findTwoSumTwo = (nums, target) => {
 
 //! Step 10 - Code our more efficent solution
 
+// Space = 0(n)
+// Time = 0(n)
+
 const findTwoSumThree = function (nums, target) {
   const numsMap = {}; // this is our hash map of numbers that i generate
   //combine the two for loops into one
