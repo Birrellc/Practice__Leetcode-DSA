@@ -19,7 +19,7 @@
 
 //? What do i return if there is no solution? - eg. just return null
 
-//! Step 2 - Write out test cases - work with interviewer to create these
+//! Step 2 - Write our test cases - work with interviewer to create these
 
 //* Test Cases - i need multiple test cases, best case, worst case etc
 
@@ -47,7 +47,7 @@
 
 //*  0 1 2 3 4  - array index
 //* [1,3,7,9,2] t = 11
-//* p1(1),p2(3) -> pair 1 (num1) / pair 2 (num2)
+//* p1(1),p2(3) -> pointer 1 (num1) / pointer 2 (num2)
 
 //*  number to find = target - nums[p1]
 //*  11 - 1 = 10 so i're looking for 10 in the rest of the array so p2 will scan for it 1 by 1
