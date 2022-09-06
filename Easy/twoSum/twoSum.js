@@ -1,4 +1,5 @@
 //* Two Sum - Target number 6, array = [2,3,1,4,9] - Easy
+// https://leetcode.com/problems/two-sum/
 
 //* Given an array of integers, return the indices of the two numbers that add up to a given target.
 
