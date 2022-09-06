@@ -76,23 +76,30 @@
 //! Step 4: Brute force solution
 
 //* area = min(a,b) * (b[i]-a[i])
+//* Time = 0(n^2) as we have nested for loops
 
 const getMaxWaterContainer = function (heights) {
   // instatiate maxArea with inital value of 0
   let maxArea = 0;
+  console.log({ maxArea });
   // as we need to move through the array this needs to be done with a forloop
   for (let p1 = 0; p1 < heights.length; p1++) {
+    console.log({ p1, value: heights[p1] });
     // dont need to instatiate variables inside first loop as our solution is based on p1 and p2 together
     // we need every value to the right of p1 so its p2 = p1+1 so p2 starts at index 1 not index 0
     for (let p2 = p1 + 1; p2 < heights.length; p2++) {
+      console.log({ p2 });
       // Logic - min(a,b) * (b[i] - a[i])
       // Initialize height value
       // min number from heights[p1], heights[p2] (7,1 would return 1)
+      console.log(heights[p1], heights[[p2]]);
       const height = Math.min(heights[p1], heights[p2]);
+      console.log(height);
       // get the width by subtracting the index
       const width = p2 - p1;
       // calculate the area by height * width;
       const area = height * width;
+      console.log(area);
       // compare existing maxArea with our new calculated area and replace maxArea with the heighest value
       maxArea = Math.max(maxArea, area);
     }
