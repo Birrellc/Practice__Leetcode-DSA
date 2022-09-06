@@ -77,6 +77,7 @@
 
 //* area = min(a,b) * (b[i]-a[i])
 //* Time = 0(n^2) as we have nested for loops
+//* Space = 0(1) not storing any scaling value in memory only using static values
 
 const getMaxWaterContainer = function (heights) {
   // instatiate maxArea with inital value of 0
@@ -113,3 +114,7 @@ console.log(getMaxWaterContainer([7, 1, 2, 3, 9])); // 28
 console.log(getMaxWaterContainer([6, 9, 3, 4, 5, 8])); // 32
 console.log(getMaxWaterContainer([])); // 0
 console.log(getMaxWaterContainer([7])); // 0
+
+//! Step 5 - Check for errors
+
+//* Console log's added to track whats happening in the code line by line with no errors
