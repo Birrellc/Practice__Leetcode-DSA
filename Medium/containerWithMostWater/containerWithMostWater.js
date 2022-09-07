@@ -118,3 +118,77 @@ console.log(getMaxWaterContainer([7])); // 0
 //! Step 5 - Check for errors
 
 //* Console log's added to track whats happening in the code line by line with no errors
+
+//! Step 6 - Check against Test Cases
+
+//! Step 7 - Space and time complexity
+
+//* Time = O(n^2) as we have nested for loops
+//* Space = O(1) not storing any scaling value in memory only using static values
+
+//! Step 8 - Look for ways to improve the code time complexity
+
+//* Will reducing space performance to improve time performance be a good idea? - Not Applicable (nothing we can do with memory to improve time)
+//* Shifting Pointers? - smaller value is the main value to effect the area so if a < b ++a or if a > b --b?
+//* So the main goal should be to move the smallest of the two values at the pointers to the next value
+
+//! Step 9 - Plan more efficient solution
+
+//* Initialize Two pointers at the opposite sides of the array - to maximize the width as distance between the 2 indexes is important
+//* We want to clculate the area, track the maxArea, only move the smaller of the 2 values
+//* Example:
+
+// [4,8,1,2,3,9]
+// p1         p2
+// area = min(4,9) (4) * (b[i](5) - a[i](0))  (5) - 4 * 5 = 20
+
+// then we store 20 and proceed to move the smaller of the two numbers so 4 will move to 8
+
+// [4,8,1,2,3,9]
+//    p1     p2
+// area = min(8,9) (4) * (b[i](5) - a[i](1))  (4) - 8 * 4 = 32
+
+// then we replace 20 with 32 as 32 is a bigger area
+// continues calculation till reaches the end of the array and as 32 is the highest it still remains the maxArea
+
+//! Step 10 - Code our more efficent solution
+
+//* Time = O(n)
+//* Space = O(1)
+
+const getMaxWaterContainerTwo = function (heights) {
+  // initialize p1 = 0 (start of the array)
+  // initialize p2 = heights.legnth -1 (end of the array)
+  // initialize maxArea as 0
+  let p1 = 0,
+    p2 = heights.length - 1,
+    maxArea = 0;
+
+  // While loop
+  // logic to decide if we want to move p1 or p2 towards the center of the array
+  while (p1 < p2) {
+    // area = min(a,b) * (b[i]-a[i])
+    const height = Math.min(heights[p1], heights[p2]);
+    const width = p2 - p1;
+    const area = height * width;
+
+    // compare existing maxArea with our new calculated area and replace maxArea with the heighest value
+    maxArea = Math.max(maxArea, area);
+
+    // comparision to check if p1 is lower than p2 if so move it forward to the next index in the array
+    if (heights[p1] <= heights[p2]) {
+      p1++;
+    } else {
+      // else if heights[p1] > heights[p2] decrement p2 from the end of the array (move p2 left 1 space in the array index)
+      p2--;
+    }
+  }
+  return maxArea;
+};
+
+// Test Cases
+
+console.log(getMaxWaterContainerTwo([7, 1, 2, 3, 9])); // 28
+console.log(getMaxWaterContainerTwo([6, 9, 3, 4, 5, 8])); // 32
+console.log(getMaxWaterContainerTwo([])); // 0
+console.log(getMaxWaterContainerTwo([7])); // 0

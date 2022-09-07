@@ -96,10 +96,10 @@ const findTwoSumTwo = (nums, target) => {
 
 //! Step 7 - Space and time complexity
 
-//* for loops are o(n) and i have nested loops so o(n2) not good
-//* space complexity i're only reassigning p1 which is a static variable so 0(1) which is good
+//* for loops are O(n) and i have nested loops so O(n2) not good
+//* space complexity i're only reassigning p1 which is a static variable so O(1) which is good
 
-//! Step 8 - Look for ways to improve the code time complexity (hash map is 0(1) if i have the key)
+//! Step 8 - Look for ways to improve the code time complexity (hash map is O(1) if i have the key)
 
 //* for loop 1 - calculate numberToFind
 //* for loop 2 - check nums[p2] === numberToFind - this is wasteful as numberToFind is in the instance of the for loop
