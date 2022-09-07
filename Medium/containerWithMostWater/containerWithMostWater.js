@@ -163,24 +163,30 @@ const getMaxWaterContainerTwo = function (heights) {
   let p1 = 0,
     p2 = heights.length - 1,
     maxArea = 0;
+  console.log({ p1, p2, maxArea });
 
   // While loop
   // logic to decide if we want to move p1 or p2 towards the center of the array
   while (p1 < p2) {
+    console.log({ p1, p2 });
     // area = min(a,b) * (b[i]-a[i])
     const height = Math.min(heights[p1], heights[p2]);
     const width = p2 - p1;
     const area = height * width;
+    console.log({ height, width, area });
 
     // compare existing maxArea with our new calculated area and replace maxArea with the heighest value
     maxArea = Math.max(maxArea, area);
+    console.log({ maxArea });
 
     // comparision to check if p1 is lower than p2 if so move it forward to the next index in the array
     if (heights[p1] <= heights[p2]) {
       p1++;
+      console.log({ p1 });
     } else {
       // else if heights[p1] > heights[p2] decrement p2 from the end of the array (move p2 left 1 space in the array index)
       p2--;
+      console.log({ p2 });
     }
   }
   return maxArea;
@@ -192,3 +198,13 @@ console.log(getMaxWaterContainerTwo([7, 1, 2, 3, 9])); // 28
 console.log(getMaxWaterContainerTwo([6, 9, 3, 4, 5, 8])); // 32
 console.log(getMaxWaterContainerTwo([])); // 0
 console.log(getMaxWaterContainerTwo([7])); // 0
+
+//! Step 11 - Review
+
+//* Initialize 3 variables p1,p2 & maxArea - our pointers and our store of value
+//* Workout the required equation for calculating the area - // area = min(a,b) * (b[i]-a[i])
+//* The lowest value of the pair(as the highest would result in spillage) and the distance between its paired number in the array index (width)
+//* The lowest value of the pair is what will effect the area the most so that is the pointer we need to move
+//* so if p1 is less than p2 we want to calculate the area and store the value in maxArea if it is higher than the previous
+//* also if p1 is less than or equal to p2 we want to move p1 to the next index of the array
+//* if p2 is less than p1 we want to move p2 left in the array from the end.
