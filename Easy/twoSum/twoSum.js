@@ -24,7 +24,7 @@
 
 //* Test Cases - i need multiple test cases, best case, worst case etc
 
-//* Test Case #1 - Best Case - where i know for sure what the ansir will be for the given inputs that i receive.
+//* Test Case #1 - Best Case - where i know for sure what the answer will be for the given inputs that i receive.
 
 //* [1,3,7,9,2] target = 11, ans = [3,4] so 9 and 2
 

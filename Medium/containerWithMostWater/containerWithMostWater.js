@@ -31,7 +31,7 @@
 
 //! Step 2 - Write our test cases - work with interviewer to create these
 
-//* Test Case #1 - Best Case - Where i know for sure what the ansir will be for the given inputs that i receive.
+//* Test Case #1 - Best Case - Where i know for sure what the answer will be for the given inputs that i receive.
 
 //* [7,1,2,3,9] - 7 and 9 are the highest and furthest so highest area - 7 x 4 = 28
 
